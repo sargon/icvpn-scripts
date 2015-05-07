@@ -201,6 +201,36 @@ Smokeping command has no additional arguments.
 [Smokeping]: http://oss.oetiker.ch/smokeping/
 
 
+### Network (`mkconfig network`)
+
+Generates a list over all networks of all selected communities. This for example
+useful to create ipset rulesets or to restrict access to dns zones.
+
+The output of `mkdir network --help`:
+```
+usage: mkconfig network [-h] [-4] [-6] [-b BEGIN] [-e END] [-p PREFIX]
+                        [-s SUFFIX] [-d DELIM]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -4                    Only IPv4 networks
+  -6                    Only IPv6 networks
+  -b BEGIN, --begin BEGIN
+                        Prefix to the list
+  -e END, --end END     Suffix to the list
+  -p PREFIX, --prefix PREFIX
+                        Prefix for an network string
+  -s SUFFIX, --suffix SUFFIX
+                        Suffix for an network string
+  -d DELIM, --delimiter DELIM
+                        Delimiter between two network strings
+```
+
+Examples:
+
+ * Bind list: ```./mkconfig network -p "\"" -s "\"" -d ";"```
+
+
 Integrity checking (`check`)
 ----------------------------
 This script checks the integrity [icvpn-meta repository]'s checkout and is used

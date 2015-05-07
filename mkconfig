@@ -8,6 +8,7 @@ from filereader import get_communities_data
 import bgp_formatter
 import dns_formatter
 import smokeping_formatter
+import net_formatter
 
 formatters = {
     "bird": bgp_formatter.BirdFormatter,
@@ -18,6 +19,7 @@ formatters = {
     "bind-forward": dns_formatter.BindForwardFormatter,
     "unbound": dns_formatter.UnboundForwardFormatter,
     "smokeping": smokeping_formatter.SmokePingFormatter,
+    "network": net_formatter.NetFormatter,
 }
 
 
